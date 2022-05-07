@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物介绍-木兰园</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plant.css">
+    <link rel="icon" href="../images/logo.png" sizes="32x32">
+    
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <script src="echarts/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+
+    <div class="main">
+        <div class="left">
+            <div style="height: 180px;">
+                <div class="outer1" >
+                    <div class="info">
+                        <h2 class="title">
+                            木兰园
+                        </h2>
+                        <h3 class="intro">
+                            木兰园建于1995年，园内分为三个点，分别在三湘景园、木兰科植物展示区和木兰科植物种质资源基因库，统称为木兰园，分布面积约180亩。湖南木兰科植物资源丰富，种类繁多、分布广泛，且常绿树种居多，四季可供观赏，观花期可由早春延续至夏秋。木兰园分为木莲区、木兰区、含笑区和综合区四个大区，共收集并成功保育木兰科植物7属82种，其中包括乐昌含笑、杂交马褂木、观光木、巴东木莲、醉香含笑、重瓣紫玉兰等一批优良用材树种和园林景观树种。
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div id="container" ></div>
+        </div>
+        <div class="right">
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/乐昌含笑.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        乐昌含笑
+                    </h2>
+                    <h3 class="intro">
+                        木兰科，常绿乔木，喜欢温暖湿润的气候，生长适宜温度为15-32℃，能抗41℃的高温，也能耐寒，树干挺拔，树荫浓郁，花香醉人，可孤植或丛植于园林中，亦可作行道树。花被片淡黄色，6片，芳香，外轮倒卵状椭圆形。花期3-4月，果期8-9月。                    
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/杂交马褂木.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        杂交马褂木
+                    </h2>
+                    <h3 class="intro">
+                        小枝灰色或灰褐色，树皮灰色，色泽浅，裂缝不明显；叶片马褂形一般为3 裂，基部一对侧裂片，前端1裂片特长；花被片倒卵形，绿色，有黄色纵条纹，长约2~4cm，果实聚合果纺锤体，较尖长。翅状小坚果先端顿或顿尖。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/观光木.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        观光木
+                    </h2>
+                    <h3 class="intro">
+                        观光木，是木兰科的单属种，星散分布于云南、广西、广东、福建、江西等省区海拔500～1000米常绿阔叶林中，常绿乔木，高达25米，新枝、芽、叶柄、叶下面密被褐色柔毛。花期3—4月，果期10—12月。适宜生长于温暖湿润气候、深厚肥沃土壤，萌芽力强，用种子繁殖。被列入国家珍稀濒危二级保护植物。            
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/巴东木莲.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        巴东木莲
+                    </h2>
+                    <h3 class="intro">
+                        巴东木莲因其花瓣形似调羹，故又名调羹树，常绿乔木，高15-25米，树皮淡灰褐色带红色；小枝带灰褐色；叶薄革质，倒卵状椭圆形，长14-20厘米；花白色，有芳香，花被片9，外轮3片近革质，狭长圆形，先端圆，长4.5-6厘米；聚合果圆柱状椭圆形，长5-9厘米，淡紫红色。花期5-6月，果期7-10月。            
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/醉香含笑.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        醉香含笑
+                    </h2>
+                    <h3 class="intro">
+                        乔木，高达30米，胸径1米左右；树皮灰白色，光滑不开裂；芽、嫩枝、叶柄、托叶及花梗均被紧贴而有光泽的红褐色短绒毛。叶革质，倒卵形、椭圆状倒卵形，上面初被短柔毛，后脱落无毛，下面被灰色毛杂有褐色平伏短绒毛。花蕾内有时包裹不同节上2-3小花蕾，形成2-3朵的聚伞花序，花被片白色，通常9片，匙状倒卵形或倒披针形；蓇葖长圆体形、倒卵状长圆体形或倒卵圆形；种子1-3颗，扁卵圆形。花期3-4月，果期9-11月。            
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/重瓣紫玉兰.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        重瓣紫玉兰
+                    </h2>
+                    <h3 class="intro">
+                        紫玉兰属落叶灌木，高达3米，常丛生，树皮灰褐色，小枝绿紫色或淡褐紫色。叶椭圆状倒卵形或倒卵形。花蕾卵圆形，被淡黄色绢毛；花叶同时开放，瓶形，直立于粗壮、被毛的花梗上，稍有香气；花被片9-12，外轮3片萼片状，紫绿色，披针形长2-3.5厘米，常早落，内两轮肉质，外面紫色或紫红色，内面带白色，花瓣状，椭圆状倒卵形，长8-10厘米，宽3-4.5厘米。花期3-4月，果期8-9月。           
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/杂种鹅掌楸.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        杂种鹅掌楸
+                    </h2>
+                    <h3 class="intro">
+                        杂种鹅掌楸是木兰科鹅掌楸属植物，是以中国鹅掌楸为母本、北美鹅掌楸为父本获得的人工杂交种。落叶乔木，高达60米，主干通直，叶形似马褂，长7-12厘米，先端略凹，近似中国鹅掌楸。小枝紫褐色，树皮褐色，树皮浅纵裂。花期5-6月，花较大，黄色，具清香，单生枝顶，形似郁金香。聚合果纺锤形，由多个顶端具1.5-3厘米长翅的小坚果组成，10月成熟，自花托脱落。            
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+    
+    <script type="text/javascript">
+        let map = new BMapGL.Map("container"); // 创建地图实例 
+        let point = new BMapGL.Point(113.037, 28.11); // 创建点坐标 
+        map.centerAndZoom(point, 16); // 初始化地图，设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);
+        let scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+        map.addControl(scaleCtrl);
+        let zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+        map.addControl(zoomCtrl);
+        let marker = new BMapGL.Marker(new BMapGL.Point(113.037025,28.10755));
+        map.addOverlay(marker);
+    </script>
+</body>
+
+</html>

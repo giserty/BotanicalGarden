@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物介绍</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plant.css">
+    <link rel="icon" href="../images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <script src="echarts/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+    <div class="main">
+        <div class="left">
+            <div style="height: 180px;">
+                <div class="outer1" >
+                    <div class="info">
+                        <h2 class="title">
+                            荫生植物园
+                        </h2>
+                        <h3 class="intro">
+                            荫生植物园建于2005年，面积7.5亩。由五个藤架、一条长140 米的溪沟、两个天然水井和一块沼泽地组成，园内道路系统完整。收集和展示荫生植物680种，包括柔毛大叶桂樱、马蹄参、薄叶润楠、八角、棱角山矾、墨紫含笑、杜茎山、七叶一枝花、小八角莲、八角莲、十大功劳属、淫羊藿属、旋蒴苣苔、血水草、多种蕨类、石菖蒲、阳荷、山姜、地瓜榕、多种苔类、喙果鸡血藤、龙须藤、湖北羊蹄甲、五指那藤、显齿蛇葡萄、美味猕猴桃等荫生植物。
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div id="container"></div>
+        </div>
+        <div class="right">
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/柔毛大叶桂樱.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        柔毛大叶桂樱
+                    </h2>
+                    <h3 class="intro">
+                        常绿乔木，其冠形大，树姿优美，高达20米，叶革质，宽卵形至椭圆形，长10至19 厘米，叶缘具粗锯齿，叶柄及叶下面密被柔毛。总状花序，花序轴、花梗、萼筒及萼片密被白色长柔毛，果实黑褐色。叶翠绿，花多白色，花期9至10月。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/马蹄参.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        马蹄参
+                    </h2>
+                    <h3 class="intro">
+                        五加科，马蹄参属乔木，高可达13米；枝暗棕色，叶片革质，倒卵状披针形或倒卵状长圆形，上面亮绿色，下面灰绿色，穗状圆锥花序单生，花序上部的花单生，无花梗，伞形花序有花；萼下面有关节，花瓣肉质，花丝比花瓣短；花柱圆锥状。果实长圆状卵形或卵形，稍侧扁，外果皮厚，胚弯曲，横切面成马蹄形。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/薄叶润楠.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        薄叶润楠
+                    </h2>
+                    <h3 class="intro">
+                        樟科润楠属植物，高大乔木，高达28米；树皮灰褐色。枝粗壮，暗褐色，无毛。叶互生或在当年生枝上轮生，倒卵状长圆形，先端短渐尖，基部楔形，坚纸质，幼时下面全面被贴伏银色绢毛。圆锥花序6-10个，聚生嫩枝的基部，长8-12（15）厘米，柔弱，多花，上部略增大，先端三角形，顶锐尖。果球形，直径约1厘米；果梗长5-10毫米。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/八角.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        八角
+                    </h2>
+                    <h3 class="intro">
+                        乔木，树冠塔形，椭圆形或圆锥形；树皮深灰色；枝密集。叶不整齐互生，倒卵状椭圆形，倒披针形或椭圆形；正糙果3-5月开花，9-10月果熟，春糙果8-10月开花，翌年3-4月果熟；花粉红至深红色，单生叶腋或近顶生；果梗长20-56毫米，聚合果饱满平直，蓇葖多为8，呈八角形。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/棱角山矾.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        棱角山矾
+                    </h2>
+                    <h3 class="intro">
+                        山矾科山矾属乔木。小枝粗壮黄绿色，叶革质，狭椭圆形，穗状花序，基部有分枝，花冠白色，花丝基部联生成五体雄蕊；花盘有毛和腺点，花柱柱头盘状。核果长圆形，核骨质，花期3～4月，果期8～10月。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/紫花含笑.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        紫花含笑
+                    </h2>
+                    <h3 class="intro">
+                        木兰科木兰亚科，含笑属常绿小乔木或灌木，高2-5米，树皮灰褐色。四季有花开放，大量花期3-6月，花极芳香，有气味似酒或苹果的清香，使人心情极为舒畅。且花色为紫红色，更能增加人们的视觉效果，引起强烈的色感效应。聚合果长2.5-5厘米，骨突果扁卵球形或扁球形，被毛；果柄粗短，长1-2厘米，粗3-5毫米，果期为8-9月，抗干旱性极强，几乎无病虫害，对土壤要求不严。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/杜茎山.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        杜茎山
+                    </h2>
+                    <h3 class="intro">
+                        紫金牛科杜茎山属植物，一般特性：灌木，有时攀援状，高1－3米，全部秃净。 叶：纸质或近革质，通常椭圆形，但有时狭椭圆状披针形至矩圆状卵形，长5－15厘米，但通常长10厘米，宽2－5厘米，先端钝或渐尖，基部钝或浑圆，边全缘或近基部全缘或长中部以上有疏锯齿，全秃净。 花：总状花序单生或2－3个聚生，长1－3厘米；花长3－5毫米，生于短柄上；小苞片阔卵形至肾形；花冠管长3－4毫米，长约为萼片的3倍。花期：1－3月。果：球形或卵形，长约4毫米。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/七叶一枝花.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        七叶一枝花
+                    </h2>
+                    <h3 class="intro">
+                        百合科重楼属的植物。别名蚤休、蚩休，重台根、整休，草河车，重台草，白甘遂，金线重楼，虫蒌，九道箍、鸳鸯虫，枝花头，螺丝七、海螺七，灯台七，白河车，螺陀三七，土三七，又名七叶莲。其特征是由一圈轮生的叶子中冒出一朵花，花的形状像极了它的叶子，它可以分成两个部分，外轮花及内轮花，外轮花与叶子很像，约有6片，而内轮花约有8片，七叶一枝花的叶序属轮生叶，片数有个体差异、从4片到14片都有，“七叶”只是名称。花的结构特别：叶心如轮状会开花，花萼为绿色，花瓣呈细丝带状。台湾早期用来治蛇毒与疮疡肿毒等症状。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/小八角莲.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        小八角莲
+                    </h2>
+                    <h3 class="intro">
+                        鬼臼属多年生草本。地下根状茎粗短横生。地上茎单一，高10。20厘米，较细，光滑无毛。叶常2枚，互生，较小，形状多样，常为不明显的4—8浅裂；叶柄生于叶片的中部。伞形花序有花2—5朵，生于距叶片不远的叶柄近顶处。6—7月开淡赭红色花，8—9月结球形小果。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/石菖蒲.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        石菖蒲
+                    </h2>
+                    <h3 class="intro">
+                        属天南星科、菖蒲属禾草状多年生草本植物，其根茎具气味。叶全缘，排成二列，肉穗花序（佛焰花序），花梗绿色，佛焰苞叶状。根茎常作药用。生长于海拔20米至2600米的地区，多生在山涧水石空隙中或山沟流水砾石间 （有时为挺水生长）。花果期2-6月。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/龙须藤.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        龙须藤
+                    </h2>
+                    <h3 class="intro">
+                        豆科羊蹄甲属植物。藤本，有卷须；嫩枝和花序薄被紧贴的小柔毛。叶纸质，卵形或心形，长3-10厘米，宽2.5-6.5（-9）厘米。总状花序狭长，腋生，有时与叶对生或数个聚生于枝顶而成复总状花序。荚果倒卵状长圆形或带状，扁平，果瓣革质；种子2-5颗，圆形，扁平，直径约12毫米。花期6-10月；果期7-12月。
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+
+    <script type="text/javascript">
+        let map = new BMapGL.Map("container"); // 创建地图实例 
+        let point = new BMapGL.Point(113.037, 28.11); // 创建点坐标 
+        map.centerAndZoom(point, 16); // 初始化地图，设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);
+        let scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+        map.addControl(scaleCtrl);
+        let zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+        map.addControl(zoomCtrl);
+        let marker = new BMapGL.Marker(new BMapGL.Point(113.038901,28.108536));
+        map.addOverlay(marker);
+    </script>
+</body>
+
+</html>

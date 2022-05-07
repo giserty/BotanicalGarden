@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script>
+    <script src="purple-passion.js"></script>
+    <script src="dark.js"></script>
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=rRMeavPKVMUenCAWmSjt1HT4lsea7lAy"></script>
+    <style>
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #main,
+        #main2 {
+            width: 300px;
+            height: 200px;
+        }
+
+        #main {
+            margin-bottom: 10px;
+        }
+
+        #box {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+        #container{height:100%} 
+    </style>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="container"></div>
+    <div id="box">
+        <div id="main"></div>
+        <div id="main2"></div>
+    </div>
+
+    <script type="text/javascript">
+        var map = new BMapGL.Map("container");
+        // 创建地图实例 
+        var point = new BMapGL.Point(116.404, 39.915);
+        // 创建点坐标 
+        map.centerAndZoom(point, 15);
+    // 初始化地图，设置中心点坐标和地图级别
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'), "purple-passion");
+        var myChart2 = echarts.init(document.getElementById('main2'), "dark");
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: [2000, 2001, 2002, 2003, 2004, 2005]
+            },
+            yAxis: {},
+            series: [{
+                name: '销量',
+                type: 'bar',
+                data: [120, 240, 345, 12, 36, 80]
+            },{
+                name: '销量',
+                type: 'line',
+                data: [220, 340, 445, 22, 66, 90]
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        option.series[0].type = "line";
+        myChart2.setOption(option);
+    </script>
+</body>
+
+</html>

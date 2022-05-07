@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/first.css">
+    <link rel="stylesheet" href="./css/play.css">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <title>湖南省植物园数字平台-首页</title>
+</head>
+
+<body>
+    <div id="page1"></div>
+    <div id="box">
+        <ul class="ul_list">
+            <li class="li_list"><img src="./images/夏季2.jpg" alt="" width="100%"></li>
+            <li class="li_list"><img src="./images/秋季2.jpg" alt="" width="100%"></li>
+            <li class="li_list"><img src="./images/冬季41.jpg" alt="" width="100%"></li>
+            <li class="li_list"><img src="./images/春季4.jpg" alt="" width="100%"></li>
+            <li class="li_list"><img src="./images/夏季2.jpg" alt="" width="100%"></li>
+        </ul>
+        <div class="odiv_nav">
+            <span class="span_list"></span>
+            <span class="span_list"></span>
+            <span class="span_list"></span>
+            <span class="span_list"></span>
+        </div>
+        <div class="left_click"><</div>
+            <div class="right_click">></div>
+            <div class="btn_left"></div>
+            <div class="btn_right"></div>
+        </div>
+    </div>
+    
+    <div class="title">
+        <h1>欢迎来到湖南省植物园</h1>
+        <p>湖南省森林植物园又名湖南省植物园，位于省会长沙，占地面积1789.8亩，森林覆盖率达90%，</p>
+        <p>是隶属于省林业局管理的公益二类科研事业单位，是集物种保育、科学研究、科普教育、生态旅游、开发利用五大功能于一体的综合性植物园。</p>
+
+        <div class="go"><a href="./html/园区展示.html">走进湖南省植物园</a></div>
+
+        <ul class="list2">
+            <li class="li1"><a href="./html/首页-开放时间.html">
+                    <img src="./images/开放时间.png" alt="">
+                    <div>开放时间</div>
+                </a>
+            </li>
+            <li class="li2"><a href="./html/首页-门票信息.html">
+                    <img src="./images/门票信息.png" alt="">
+                    <div>门票信息</div>
+                </a></li>
+            <li class="li3"><a href="./html/首页-交通信息.html">
+                    <img src="./images/交通信息.png" alt="">
+                    <div>交通信息</div>
+                </a></li>
+            <li class="li4"><a href="./html/首页-游园规则.html">
+                    <img src="./images/游园规则.png" alt="">
+                    <div>游园规则</div>
+                </a></li>
+        </ul>
+    </div>
+
+    <div class="title2">
+        <h1>四季如歌</h1>
+        <ul class="list3">
+            <li><a href="./html/首页-春之歌.html">
+                    <img src="./images/春季12.jpg" width="47.5%" alt="">
+                    <div class="d1">春之歌</div>
+                </a></li>
+            <li><a href="./html/首页-夏之恋.html">
+                    <img src="./images/夏季绣球.jpg" width="47.5%" alt="">
+                    <div class="d2">夏之恋</div>
+                </a></li>
+            <li><a href="./html/首页-秋之色.html">
+                    <img src="./images/秋季7.jpg" width="47.5%" alt="">
+                    <div class="d3">秋之色</div>
+                </a></li>
+            <li><a href="./html/首页-冬之韵.html">
+                    <img src="./images/冬季4.jpg" width="47.5%" alt="">
+                    <div class="d4">冬之韵</div>
+                </a></li>
+        </ul>
+    </div>
+
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("./html/firstHead.html");</script>
+    <script src=".js/play.js"></script>
+    <script src="./js/map.js"></script>
+    <script src="./js/goIndex.js"></script>
+    <script src="./js/play.js"></script>
+
+</body>
+
+</html>

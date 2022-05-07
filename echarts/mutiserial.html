@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script>
+    <script src="purple-passion.js"></script>
+    <style>
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #main {
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+
+    <div id="main"></div>
+
+
+    <script type="text/javascript">
+
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'), "purple-passion");
+
+        // 指定图表的配置项和数据
+        var option = {
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            tooltip: {},
+            legend: {
+                data: ['销量']
+            },
+            xAxis: {
+                data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+            },
+            yAxis: {},
+            dataset: {
+                source: [
+                    ['一月', 284, 450, '男', 1000],
+                    ['二月', 179, 418, '女', 300],
+                    ['三月', 216, 153, '-', '-'],
+                    ['四月', 296, 444, '-', '-'],
+                    ['五月', 408, 76, '-', '-'],
+                    ['六月', 217, 106, '-', '-'],
+                    ['七月', 473, 246, '-', '-'],
+                    ['八月', 61, 313, '-', '-'],
+                    ['九月', 121, 365, '-', '-'],
+                    ['十月', 316, 460, '-', '-'],
+                    ['十一月', 381, 403, '-', '-'],
+                    ['十二月', 68, 335, '-', '-']
+                ]
+            },
+            series: [{
+                name: '销量',
+                type: 'bar',
+                encode:{x:0,y:1}
+            }, {
+                name: '销量',
+                type: 'line',
+                encode:{x:0,y:2}
+            }]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>

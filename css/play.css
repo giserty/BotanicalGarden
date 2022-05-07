@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#box {
+    width: 62.5rem;
+    height: 30rem;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.ul_list {
+    width: 312.5rem;
+    height: 100%;
+    position: absolute;
+}
+
+.li_list {
+    width: 62.5rem;
+    height: 100%;
+    list-style: none;
+    float: left;
+}
+
+.li_list img {
+    width: 100%;
+    height: 100%;
+}
+
+.odiv_nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.span_list {
+    width: 0.5rem;
+    height: 0.5rem;
+    border: 3px solid white;
+    border-radius: 50%;
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.left_click {
+    position: absolute;
+    width: 80px;
+    height: 400px;
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    line-height: 400px;
+    cursor: pointer;
+    z-index:10000;
+}
+
+.right_click {
+    position: absolute;
+    right: 0px;
+    width: 80px;
+    height: 400px;
+    font-size: 4em;
+    color: white;
+    text-align: center;
+    line-height: 400px;
+    cursor: pointer;
+    z-index:10000;
+}
+
+.btn_left {
+    position: absolute;
+    left: -40px;
+    width: 40px;
+    height: 400px;
+    opacity: 0.5;
+    z-index: 9999;
+    box-shadow: 40px 0px 150px white;
+    transition: all 0.2s;
+}
+
+.btn_right {
+    position: absolute;
+    right: -40px;
+    width: 40px;
+    height: 400px;
+    font-size: 4em;
+    box-shadow: -40px 0px 150px white;
+    opacity: 0.5;
+    z-index: 9999;
+    transition: all 0.2s;
+}

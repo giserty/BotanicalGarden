@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/first2.css">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <style>
+        #container {
+            width: 100%;
+            height: 35rem;
+            margin: 5px auto 0;
+            overflow: hidden;
+            /* position: absolute; */
+            float: left;
+        }
+    </style>
+    <title>交通信息——湖南省植物园</title>
+</head>
+
+<body>
+    <div id="page1"></div>
+    <div class="menu">
+        <div class="l">
+            <a href="首页-开放时间.html">
+                <img src="../images/home.png" alt="">
+                <div>关于我们</div>
+            </a>
+        </div>
+        <div class="r">
+            <ul>
+                <li><a href="首页-游园规则.html">游园规则</a></li>
+                <li><a href="首页-交通信息.html">交通信息</a></li>
+                <li><a href="首页-门票信息.html">门票信息</a></li>
+                <li><a href="首页-开放时间.html">开放时间</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id='result'>选择起点</div>
+    <div id='result1'>选择终点</div>
+    <div id='result3'>北门</div>
+    <div id='result4'>东门</div>
+    <div id='result5'>西门</div>
+    <div id="container"></div>
+
+
+
+    <script>
+        var map = new BMapGL.Map("container");
+        map.centerAndZoom(new BMapGL.Point(113.038, 28.11), 14);
+        map.enableScrollWheelZoom(true);
+        let scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+        map.addControl(scaleCtrl);
+        let zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+        map.addControl(zoomCtrl);
+
+        let p1, p2;
+        let startPoint = { x: 0, y: 0 };
+        document.getElementById("result").onclick = function fun1() {
+            map.clearOverlays();
+            map.setDefaultCursor("crosshair");
+            map.addEventListener("click", function (e) {
+                map.clearOverlays();
+                startPoint.x = e.latlng.lng;
+                startPoint.y = e.latlng.lat;
+                let marker1 = new BMapGL.Marker(new BMapGL.Point(startPoint.x, startPoint.y));
+                map.addOverlay(marker1);
+            });
+        }
+
+        document.getElementById("result1").onclick = function fun2() {
+            document.getElementById("result3").style.display = "block";
+            document.getElementById("result4").style.display = "block";
+            document.getElementById("result5").style.display = "block";
+        }
+
+        document.getElementById("result3").onclick = function fun3() {
+            p2 = new BMapGL.Point(113.036818, 28.116651);
+            p1 = new BMapGL.Point(startPoint.x, startPoint.y);
+            var driving = new BMapGL.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
+            driving.search(p1, p2);
+            document.getElementById("result3").style.display = "none";
+            document.getElementById("result4").style.display = "none";
+            document.getElementById("result5").style.display = "none";
+        }
+
+        document.getElementById("result4").onclick = function fun4() {
+            p2 = new BMapGL.Point(113.048929, 28.107794);
+            p1 = new BMapGL.Point(startPoint.x, startPoint.y);
+            var driving = new BMapGL.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
+            driving.search(p1, p2);
+            document.getElementById("result3").style.display = "none";
+            document.getElementById("result4").style.display = "none";
+            document.getElementById("result5").style.display = "none";
+        }
+
+        document.getElementById("result5").onclick = function fun5() {
+            p2 = new BMapGL.Point(113.02668, 28.108571);
+            p1 = new BMapGL.Point(startPoint.x, startPoint.y);
+            var driving = new BMapGL.DrivingRoute(map, { renderOptions: { map: map, autoViewport: true } });
+            driving.search(p1, p2);
+            document.getElementById("result3").style.display = "none";
+            document.getElementById("result4").style.display = "none";
+            document.getElementById("result5").style.display = "none";
+        }
+
+
+
+    </script>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+</body>
+
+</html>

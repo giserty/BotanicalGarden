@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观赏路线规划</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/line.css">
+    <link rel="icon" href="images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+
+    <div class="menu">
+        <div class="l">
+            <a href="./首页-秋之色.html"><img src="../images/箭头.png" alt="">
+                <div>四季如歌-秋之色</div>
+            </a>
+        </div>
+        <div class="r">
+            <ul>
+                <li><a href="./观赏路线-冬季.html">冬季赏雪</a></li>
+                <li><a href="./观赏路线-秋季.html">秋季健步</a></li>
+                <li><a href="./观赏路线-夏季.html">夏季畅游</a></li>
+                <li><a href="./观赏路线规划.html">春季赏樱</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <div id="container"></div>
+        </div>
+        <div class="right">
+            <h1 class="title">秋季健步之旅</h1>
+            <div class="info">
+                路线：西门-三湘景园-国家杜鹃园-神农苑-天际阁-杜鹃广场-荫生植物园-枫香大道-桂花园
+                <br><br>
+                遍布沿线，走过踏步道可以到达植物园最高点三湘景园，它是植物园的“湖南之窗”，国家杜鹃园里是青枝繁茂的百态杜鹃，神农苑里落地的银杏叶仿佛金色的海洋，天际阁是植物园的标志性建筑，大片花田的杜鹃广场，拥有680余种荫生植物的荫生植物园，香气四溢的桂花园，构成了秋色宜人的美景。
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+</body>
+
+</html>
+<script>
+    var map = new BMapGL.Map('container');
+    var point = new BMapGL.Point(113.038, 28.11);
+    map.centerAndZoom(point, 16);
+    map.enableScrollWheelZoom(true);
+
+    let flowers = [{
+        x: 113.035052,
+        y: 28.106713,
+        img: "../images/百合花.png",
+        pic: "../images/百合1.png",
+        name: "百合花",
+    },
+    {
+        x: 113.038364,
+        y: 28.109965,
+        img: "../images/桂花.png",
+        pic: "../images/桂花1.jpeg",
+        name: "桂花",
+    }, {
+        x: 113.028346,
+        y: 28.109143,
+        img: "../images/银杏.png",
+        pic: "../images/银杏1.jpeg",
+        name: "银杏",
+    }];
+
+    let marker = [];
+    let myIcon = [];
+    let pt = [];
+    let infoWindow = [];
+    for (let i = 0; i < flowers.length; i++) {
+        myIcon = new BMapGL.Icon(flowers[i].img, new BMapGL.Size(30, 30));
+        pt[i] = new BMapGL.Point(flowers[i].x, flowers[i].y);
+        marker[i] = new BMapGL.Marker(pt[i], { icon: myIcon });
+        map.addOverlay(marker[i]);
+        infoWindow[i] = new BMapGL.InfoWindow(`<h2 style="margin-bottom:20px;">` + flowers[i].name + `</h2>
+<img src=`+ flowers[i].pic + ` width='250' height='150'/>`);
+        marker[i].addEventListener('click', function () {
+            map.openInfoWindow(infoWindow[i], pt[i]); // 开启信息窗口
+        });
+    }
+
+    // 绘制线
+    var polyline = new BMapGL.Polyline([
+        new BMapGL.Point(113.027475, 28.108553),
+        new BMapGL.Point(113.027852, 28.108792),
+        new BMapGL.Point(113.028077, 28.109278),
+        new BMapGL.Point(113.032586, 28.106315),
+        new BMapGL.Point(113.033682, 28.106936),
+        new BMapGL.Point(113.034778, 28.107079),
+        new BMapGL.Point(113.03573, 28.106506),
+        new BMapGL.Point(113.036467, 28.106474),
+        new BMapGL.Point(113.03724, 28.107478),
+        new BMapGL.Point(113.038695, 28.108497),
+        new BMapGL.Point(113.038695, 28.109437),
+        new BMapGL.Point(113.039009, 28.110098),
+        new BMapGL.Point(113.040213, 28.109501),
+        new BMapGL.Point(113.041156, 28.109358),
+        new BMapGL.Point(113.042162, 28.108983),
+        new BMapGL.Point(113.043177, 28.10923)
+    ], {
+        strokeColor: 'red',
+        strokeWeight: 2,
+        strokeOpacity: 0.8
+    });
+    map.addOverlay(polyline);
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观赏路线规划</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/line.css">
+    <link rel="icon" href="images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+
+    <div class="menu">
+        <div class="l">
+            <a href="./首页-秋之色.html"><img src="../images/箭头.png" alt="">
+                <div>四季如歌-冬之韵</div>
+            </a>
+        </div>
+        <div class="r">
+            <ul>
+                <li><a href="./观赏路线-冬季.html">冬季赏雪</a></li>
+                <li><a href="./观赏路线-秋季.html">秋季健步</a></li>
+                <li><a href="./观赏路线-夏季.html">夏季畅游</a></li>
+                <li><a href="./观赏路线规划.html">春季赏樱</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <div id="container"></div>
+        </div>
+        <div class="right">
+            <h1 class="title">冬季赏雪之旅</h1>
+            <div class="info">
+                路线：北门-世界名花广场-药用植物园-枫香大道-荫生植物园-竹园-木兰园-梅园
+                <br><br>
+                遍布沿线，名花广场的千种花卉，药用植物园里540余种药用植物，荫生植物园里680余种荫生植物，竹园里冷风中依旧耸立的竹林，木兰园里常绿树种可四季观赏，梅园里傲雪凌霜的梅花，皆为寒冷的冬天添上一抹色彩。
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+</body>
+
+</html>
+<script>
+    var map = new BMapGL.Map('container');
+    var point = new BMapGL.Point(113.038, 28.11);
+    map.centerAndZoom(point, 16);
+    map.enableScrollWheelZoom(true);
+
+    let flowers = [{
+        x: 113.0352,
+        y: 28.107008,
+        img: "../images/梅花.png",
+        pic: "../images/梅花.jpeg",
+        name: "梅花",
+    },
+    {
+        x: 113.039322,
+        y: 28.113372,
+        img: "../images/郁金香.png",
+        pic: "../images/郁金香111.jpeg",
+        name: "郁金香",
+    }, {
+        x: 113.039348,
+        y: 28.109726,
+        img: "../images/仙人掌.png",
+        pic: "../images/仙人掌1.jpeg",
+        name: "赏草",
+    }];
+
+    let marker = [];
+    let myIcon = [];
+    let pt = [];
+    let infoWindow = [];
+    for (let i = 0; i < flowers.length; i++) {
+        myIcon = new BMapGL.Icon(flowers[i].img, new BMapGL.Size(30, 30));
+        pt[i] = new BMapGL.Point(flowers[i].x, flowers[i].y);
+        marker[i] = new BMapGL.Marker(pt[i], { icon: myIcon });
+        map.addOverlay(marker[i]);
+        infoWindow[i] = new BMapGL.InfoWindow(`<h2 style="margin-bottom:20px;">` + flowers[i].name + `</h2>
+<img src=`+ flowers[i].pic + ` width='250' height='150'/>`);
+        marker[i].addEventListener('click', function () {
+            map.openInfoWindow(infoWindow[i], pt[i]); // 开启信息窗口
+        });
+    }
+
+    // 绘制线
+    var polyline = new BMapGL.Polyline([
+        new BMapGL.Point(113.032739, 28.10606),
+        new BMapGL.Point(113.033709, 28.10693),
+        new BMapGL.Point(113.034751, 28.107079),
+        new BMapGL.Point(113.03573, 28.106506),
+        new BMapGL.Point(113.036467, 28.106474),
+        new BMapGL.Point(113.03724, 28.107478),
+        new BMapGL.Point(113.037015, 28.107948),
+        new BMapGL.Point(113.037096, 28.108155),
+        new BMapGL.Point(113.037653, 28.108641),
+        new BMapGL.Point(113.037698, 28.109031),
+        new BMapGL.Point(113.038695, 28.108497),
+        new BMapGL.Point(113.038695, 28.109437),
+        new BMapGL.Point(113.040231, 28.11197),
+        new BMapGL.Point(113.039494, 28.113085),
+        new BMapGL.Point(113.03962, 28.113404),
+        new BMapGL.Point(113.040051, 28.11393)
+    ], {
+        strokeColor: 'red',
+        strokeWeight: 2,
+        strokeOpacity: 0.8
+    });
+    map.addOverlay(polyline);
+</script>

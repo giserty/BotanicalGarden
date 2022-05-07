@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观赏路线规划</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/line.css">
+    <link rel="icon" href="images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+    <div class="menu">
+        <div class="l">
+            <a href="./首页-夏之恋.html"><img src="../images/箭头.png" alt="">
+                <div>四季如歌-夏之恋</div>
+            </a>
+        </div>
+        <div class="r">
+            <ul>
+                <li><a href="./观赏路线-冬季.html">冬季赏雪</a></li>
+                <li><a href="./观赏路线-秋季.html">秋季健步</a></li>
+                <li><a href="./观赏路线-夏季.html">夏季畅游</a></li>
+                <li><a href="./观赏路线规划.html">春季赏樱</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="left">
+            <div id="container"></div>
+        </div>
+        <div class="right">
+            <h1 class="title">夏季畅游之旅</h1>
+            <div class="info">
+                路线：北门-世界名花广场-樱花大道-山茶园-竹园-枫香大道-荫生植物园-玫瑰园-樱花湖畔-乐林游乐园-乐民水上乐园
+                <br><br>
+                遍布沿线，千种花卉汇集名花广场，高静，清丽的茶花在山茶园里静静绽放，荫生植物园里680余中荫生植物，玫瑰园里各色玫瑰争芳斗艳，樱花湖畔的绣球花遍地花开，乐林游乐园各种游乐设施绚烂缤纷，乐民水上乐园的凉爽冲淡了炎热夏天带来的疲惫。
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+</body>
+
+</html>
+<script>
+    var map = new BMapGL.Map('container');
+    var point = new BMapGL.Point(113.038, 28.11);
+    map.centerAndZoom(point, 16);
+    map.enableScrollWheelZoom(true);
+
+    let flowers = [{
+        x: 113.039348,
+        y: 28.109726,
+        img: "../images/玫瑰.png",
+        pic: "../images/玫瑰1.jpg",
+        name: "玫瑰",
+    },
+    {
+        x: 113.039137,
+        y: 28.112101,
+        img: "../images/绣球花.png",
+        pic: "../images/绣球2.jpg",
+        name: "绣球花",
+    }, {
+        x: 113.039153,
+        y: 28.11487,
+        img: "../images/向日葵.png",
+        pic: "../images/向日葵1.png",
+        name: "向日葵",
+    },
+    {
+        x: 113.03708,
+        y: 28.109734,
+        img: "../images/山茶花.png",
+        pic: "../images/山茶花1.jpeg",
+        name: "山茶花",
+    }];
+
+    let marker = [];
+    let myIcon = [];
+    let pt = [];
+    let infoWindow = [];
+    for (let i = 0; i < flowers.length; i++) {
+        myIcon = new BMapGL.Icon(flowers[i].img, new BMapGL.Size(30, 30));
+        pt[i] = new BMapGL.Point(flowers[i].x, flowers[i].y);
+        marker[i] = new BMapGL.Marker(pt[i], { icon: myIcon });
+        map.addOverlay(marker[i]);
+        infoWindow[i] = new BMapGL.InfoWindow(`<h2 style="margin-bottom:20px;">` + flowers[i].name + `</h2>
+<img src=`+ flowers[i].pic + ` width='250' height='150'/>`);
+        marker[i].addEventListener('click', function () {
+            map.openInfoWindow(infoWindow[i], pt[i]); // 开启信息窗口
+        });
+    }
+
+    // 绘制线
+    var polyline = new BMapGL.Polyline([
+        new BMapGL.Point(113.039153, 28.11487),
+        new BMapGL.Point(113.038539, 28.113871),
+        new BMapGL.Point(113.037884, 28.113147),
+        new BMapGL.Point(113.03792, 28.112493),
+        new BMapGL.Point(113.037758, 28.112286),
+        new BMapGL.Point(113.037075, 28.110454),
+        new BMapGL.Point(113.03677, 28.10996),
+        new BMapGL.Point(113.037021, 28.109929),
+        new BMapGL.Point(113.037084, 28.109156),
+        new BMapGL.Point(113.037148, 28.109112),
+        new BMapGL.Point(113.037704, 28.108997),
+        new BMapGL.Point(113.037628, 28.108606),
+        new BMapGL.Point(113.037111, 28.108148),
+        new BMapGL.Point(113.036999, 28.107937),
+        new BMapGL.Point(113.03734, 28.107583),
+        new BMapGL.Point(113.038508, 28.108276),
+        new BMapGL.Point(113.038724, 28.108515),
+        new BMapGL.Point(113.038689, 28.109461),
+        new BMapGL.Point(113.039013, 28.110114),
+        new BMapGL.Point(113.040208, 28.111986),
+        new BMapGL.Point(113.042238, 28.113627),
+        new BMapGL.Point(113.04186, 28.114416)
+    ], {
+        strokeColor: 'red',
+        strokeWeight: 2,
+        strokeOpacity: 0.8
+    });
+    map.addOverlay(polyline);
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物介绍</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plant.css">
+    <link rel="icon" href="../images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <script src="echarts/echarts.min.js"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+    
+    <div class="main">
+        <div class="left">
+            <div style="height: 180px;">
+                <div class="outer1" >
+                    <div class="info">
+                        <h2 class="title">
+                            山茶园
+                        </h2>
+                        <h3 class="intro">
+                            位于樱花湖畔，建于1992年，面积约45亩，现有半齿红山茶、长瓣短柱茶、糙果茶等山茶物种及十八学士、金盘荔枝、星桃牡丹、紫魁等30多个茶花品种，约700株。茶花为我国十大名花之一，它鲜艳、高雅、清丽、吉祥，叶片翠绿、花朵硕大，自晚秋至初夏，不同品种次第绽开，以春花为主，但亦有品种在冰雪时开放，十分美丽动人。
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div id="container"></div>
+        </div>
+        <div class="right">
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/长瓣短柱茶.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        长瓣短柱茶
+                    </h2>
+                    <h3 class="intro">
+                        山茶科，山茶属灌木或小乔木，嫩枝较纤细，有短柔毛。叶片革质，长圆形，先端渐尖或尾状渐尖，基部阔楔形或略圆，上面干后橄榄绿色，有光泽，无毛，或中脉基部有短毛，下面同色，中脉有稀疏长毛，花顶生，白色，花梗极短；苞被片半圆形至近圆形，革质，无毛，花开后脱落；花瓣倒卵形，先端凹入，花药基部着生；子房有黄色长粗毛；蒴果球形，花期1-3月。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/糙果茶.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        糙果茶
+                    </h2>
+                    <h3 class="intro">
+                        山茶科、山茶属植物。产广东、广西、湖南、福建、江西。越南北部有分布。模式标本采自广东罗浮山。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/金盘荔枝.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        金盘荔枝
+                    </h2>
+                    <h3 class="intro">
+                        大瓣一轮成盆状，花径9-10公分，中心是多数细瓣紧密排列组成的球体，状若荔枝，细瓣中伴生少雄蕊，但有时雄蕊较多。
+                    </h3>
+                </div>
+            </div>
+
+            <div class="outer">
+                <div class="img-wrapper">
+                    <img src="../images/星桃牡丹.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h2 class="title">
+                        星桃牡丹
+                    </h2>
+                    <h3 class="intro">
+                        山茶科、山茶属植物。高效、优质；叶椭圆形；深绿色；基部楔形；渐尖花粉红色；牡丹型；花径8～10cm花期3～4月适应性强。
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+
+    <script type="text/javascript">
+        let map = new BMapGL.Map("container"); // 创建地图实例 
+        let point = new BMapGL.Point(113.037, 28.11); // 创建点坐标 
+        map.centerAndZoom(point, 16); // 初始化地图，设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true);
+        let scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+        map.addControl(scaleCtrl);
+        let zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+        map.addControl(zoomCtrl);
+        let marker = new BMapGL.Marker(new BMapGL.Point(113.03708,28.109734));
+        map.addOverlay(marker);
+    </script>
+</body>
+
+</html>

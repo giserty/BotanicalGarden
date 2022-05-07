@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>园区展示</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <style>
+        #container{
+        width: 100%;
+        height: 37rem;
+        margin: 5px auto 0;
+        overflow: hidden;
+}
+    </style>
+    <link rel="icon" href="images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+
+    <div id="container"></div>
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+    let map = new BMapGL.Map("container"); // 创建地图实例 
+    let point = new BMapGL.Point(113.04, 28.11); // 创建点坐标 
+    map.centerAndZoom(point, 16); // 初始化地图，设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true);
+    let scaleCtrl = new BMapGL.ScaleControl();  // 添加比例尺控件
+    map.addControl(scaleCtrl);
+    let zoomCtrl = new BMapGL.ZoomControl();  // 添加缩放控件
+    map.addControl(zoomCtrl);
+
+    let place = [{
+        x: 113.037105,
+        y: 28.109868,
+        img: '../images/樱花园.png',
+        name: "樱花园",
+        url: './植物介绍-樱花园.html',
+        content: "建于 1987 年，面积 13.3hm² ，收集展 示染井吉野樱、红叶樱、垂枝樱、云南樱、御衣黄、关 山、八重红大岛、普贤像、尾叶樱、山樱、冬樱花等樱 花品种十多种 3000 多株，其中 2000 株染井吉野樱 系 1985 年日本滋贺县赠送的，成为园内主要的观赏品种。“小园新种红樱树，闲绕花枝便当游”，每到樱花 盛开的时候，樱花与樱花湖构成绝妙景观，游人如 织，络绎不绝，是湖南乃至中国赏樱的最佳场所。",
+    }, {
+        x: 113.028089,
+        y: 28.109347,
+        img: '../images/国家杜鹃园图.png',
+        name: "杜鹃园",
+        url: './植物介绍-杜鹃园.html',
+        content: "建于 2008 年，面积450亩 ，拟重点收集保存杜鹃 属植物中适应性强、价值大、观赏性强、开发利用价 值高的珍稀种类、种源和居群 2000 份，150 种 300 个品种，打造成为国际先进水平的中国杜鹃属珍稀植 物迁地保育与遗传育种平台。目前，已引种保存 88 种 230 个品种，其中天门山杜鹃、张家界杜鹃、涧上杜鹃系国内首次引种栽培；鹿角杜鹃、溪畔杜鹃、高 山杜鹃、毛棉杜鹃、云锦杜鹃、映山红、各种春鹃等观赏效果极具特色。"
+    }, {
+        x: 113.037025,
+        y: 28.10755,
+        img: '../images/木兰园.png',
+        name: "木兰园",
+        url: './植物介绍-木兰园.html',
+        content: "木兰园建于1995年，园内分为三个点，分别在三湘景园、木兰科植物展示区和木兰科植物种质资源基因库，统称为木兰园，分布面积约180亩。湖南木兰科植物资源丰富，种类繁多、分布广泛，且常绿树种居多，四季可供观赏，观花期可由早春延续至夏秋。木兰园分为木莲区、木兰区、含笑区和综合区四个大区，共收集并成功保育木兰科植物7属82种，其中包括乐昌含笑、杂交马褂木、观光木、巴东木莲、醉香含笑、重瓣紫玉兰等一批优良用材树种和园林景观树种，且生长态势良好，大多数物种已经开花结果。"
+    }, {
+        x: 113.037564,
+        y: 28.108649,
+        img: '../images/竹园.png',
+        name: "竹园",
+        url: './植物介绍-竹园.html',
+        content: "观赏竹园建于2008年，面积约30亩。整个专类园分为散生株区、丛生竹区和混生竹区3个区，收集展示国内外特色观赏竹176种，有观杆、观叶、观形及观赏地被竹等类型。配植兰花三七、九头狮子草、地稔、短梗大参等42中花灌木和地被植物，以及再力花等26种水生植物。包括圣音竹、龟甲竹、鼓节竹、花毛竹、黄杆乌哺鸡竹、粉单竹、慈竹、斑竹、紫竹、白纹阴阳竹、花叶矢竹、菲黄竹、翠竹等等。观赏竹园内由一条贯穿全园的溪流为主线引领着景观序列，依山就水建有竹质亭廊等园林建筑，利用主次游道、地形变化、植物配置及其他元素的相互联系，形成了幽静、四季郁青的优美景观。"
+    }, {
+        x: 113.039153,
+        y: 28.11487,
+        img: '../images/世界名花园.png',
+        name: "世界名花园",
+        url: './植物介绍-世界名花园.html',
+        content: "始建于2010年，面积75亩。是展示世界多种名花的百花园，园内栽植牡丹20亩，包括观赏牡丹9大色系、120个品种、12000株，为中国地栽观赏牡丹最南端之地，名贵品种有黄色的‘金阁’、‘姚黄’，洛阳红等，同时配套栽培展示芍药60个品种2000多株。其它区域根据季节不同，结合花卉生长特性展示世界名花，春季展示郁金香、风信子、洋水仙等球根花卉，夏季展示盆栽荷花和马鞭草、薰衣草等时尚草花，秋季展示向日葵，硫华菊、三色堇等时令草花品种，全年展示各种花卉近千多个品种，近300万株（盆），是园内季节性世界名花展示区。"
+    }, {
+        x: 113.038901,
+        y: 28.108536,
+        img: '../images/荫生植物园.png',
+        name: "荫生植物园",
+        url: './植物介绍-荫生植物园.html',
+        content: "荫生植物园建于2005年，面积7.5亩。由五个藤架、一条长140 米的溪沟、两个天然水井和一块沼泽地组成，园内道路系统完整。收集和展示荫生植物680种，包括柔毛大叶桂樱、马蹄参、薄叶润楠、八角、棱角山矾、墨紫含笑、杜茎山、七叶一枝花、小八角莲、八角莲、十大功劳属、淫羊藿属、旋蒴苣苔、血水草、多种蕨类、石菖蒲、阳荷、山姜、地瓜榕、多种苔类、喙果鸡血藤、龙须藤、湖北羊蹄甲、五指那藤、显齿蛇葡萄、美味猕猴桃等荫生植物。"
+    },
+    {
+        x: 113.040138,
+        y: 28.109445,
+        img: '../images/珍稀植物园.png',
+        name: "珍稀植物园",
+        url: './植物介绍-珍稀濒危植物园.html',
+        content: "珍稀植物园的建设始于1985年，面积约100亩，共迁地保育植物 700 多种，其中珍稀濒危植物 118 种，国家一级保护植物有银杉、珙桐、水杉、伯乐树（钟萼木）、南方红豆杉、金花茶、银杏、水松、落叶木莲9种。湖南特有植物有长果秤锤树、绒毛皂荚、桃源野桐等。区内有天然形成的樟树群落，另外有通过仿 生栽培的珍稀植物、木兰科、壳斗科和杜英科植物等 多种群落。园内种类多样，森林茂密，四季常青，色彩 丰富。"
+    },
+    {
+        x: 113.038389,
+        y: 28.110051,
+        img: '../images/桂花园.png',
+        name: "桂花园",
+        url: './植物介绍-桂花紫荆园.html',
+        content: "桂花园占地面积45亩。1993年，结合建设湖南省长沙市植树基地，由长沙市绿化委员会拨款建成。现有银桂、金桂、丹桂和四季桂四个品种群，15个品种，花有乳白、金黄、橙红等多种颜色。“八月桂花遍地开，桂花开放幸福来”，每年中秋月明，天清露冷，桂花盛开，满园芳香，树姿飘逸，碧枝绿叶，已成为闻香胜景。桂花含有桂花烷、三十碳烷等芳香物质，花香浓郁，可作香料与食用，又对有害气体二氧化硫、氟化氢有一定的抗性，是应用较广的园林绿化名贵树种。"
+    },
+    {
+        x: 113.03708,
+        y: 28.109734,
+        img: '../images/山茶园.png',
+        name: "山茶园",
+        url: './植物介绍-山茶园.html',
+        content: "位于樱花湖畔，建于1992年，面积约45亩，现有半齿红山茶、长瓣短柱茶、糙果茶等山茶物种及十八学士、金盘荔枝、星桃牡丹、紫魁等30多个茶花品种，约700株。茶花为我国十大名花之一，它鲜艳、高雅、清丽、吉祥，叶片翠绿、花朵硕大，自晚秋至初夏，不同品种次第绽开，以春花为主，但亦有品种在冰雪时开放，十分美丽动人。"
+    },];
+
+    let marker = [];
+    let pt = [];
+    let infoWindow = [];
+    for (let i = 0; i < place.length; i++) {
+        pt[i] = new BMapGL.Point(place[i].x, place[i].y);
+        marker[i] = new BMapGL.Marker(pt[i]);
+        map.addOverlay(marker[i]);
+
+        infoWindow[i] = new BMapGL.InfoWindow(`<h4 style='margin:0 0 5px 0;'>` + place[i].name + `</h4>
+<img style='float:right;margin:0 4px 22px' id='imgDemo' src=`+place[i].img+ ` width='139' height='104'/>
+<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>` + place[i].content + `
+</p></div>`+`<a href=`+place[i].url+`>查看植物介绍</a>`);
+        marker[i].addEventListener('click', function () {
+            map.openInfoWindow(infoWindow[i], pt[i]); // 开启信息窗口
+        });
+    }
+</script>

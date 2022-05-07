@@ -1,0 +1,90 @@
+.menu{
+    width: 100%;
+}
+.menu .l a{
+    float: left;
+    /* margin: 20px 10px; */
+}
+
+.menu .l a div{
+    float: right;
+    text-decoration: none;
+    color: grey;
+    font-size: 14px;
+    margin: 15px 0 0 10px;
+}
+.menu .l a div:hover{
+    color: green
+}
+
+.menu .l a img{
+    /* width: 1rem; */
+    height: 1.5rem;
+    margin: 10px 0 0 0;
+}
+
+
+
+.menu .r li{
+    float: right;
+    margin: 20px 10px;
+    font-size: 14px;
+}
+.menu .r li a{
+    text-decoration: none;
+    color: grey;
+}
+.menu .r li a:hover{
+    color: green
+}
+
+.head{
+    width: 100%;
+    /* height: 20rem; */
+}
+
+.head img{
+    width: 100%;
+}
+
+.main{
+    width: 63rem;
+    display: flex;
+    margin: 20px 5px;
+}
+
+.right{
+    height: 18.7rem;
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+}
+.right div{
+    margin-top: 10px;
+    line-height: 2rem;
+    color: grey;
+}
+
+.left{
+    flex: 2;
+}
+.left img{
+    width: 100%;
+    height: 20rem;
+}
+
+
+
+.main .right .title{
+    color: darkgreen;
+    font-size: 24px;
+}
+
+.main .right .time{
+    color: green;
+}
+
+
+
+

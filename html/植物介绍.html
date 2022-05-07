@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>植物介绍</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="icon" href="../images/logo.png" sizes="32x32">
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=4fFhvhmFfVkSz9kX7p9cA180OcgMvKvw"></script>
+    <script src="../echarts/echarts.js"></script>
+</head>
+
+<body>
+    <div id="page1"></div>
+
+    <section class="mainbox"> 
+        <div class="column">
+            <div class="panel c1" style="width:98%; height: 48%;"> 
+                <h2>主要花卉花期（1）</h2>  
+                <div class="chart" style="width:500px; height: 250px; margin: 0 auto;">           
+                </div> 
+                <div class="panel-footer"></div>
+            </div> 
+            <div class="panel c2" style="width:98%; height: 48%;"> 
+                <h2>主要花卉花期（2）</h2>  
+                <div class="chart" style="width:500px; height: 250px; margin: 0 auto;">           
+                </div> 
+                <div class="panel-footer"></div>
+            </div>   
+        </div> 
+        <div class="column">
+            <div class="panel c3" style="width:98%; height: 48%;"> 
+                <h2>植物种类数</h2>  
+                <div class="chart" style="width:350px; height: 250px; margin: 0 auto;">           
+                </div> 
+                <div class="panel-footer"></div>
+            </div> 
+            <div class="panel c4" style="width:98%; height: 48%;"> 
+                <h2>园区面积（公顷）</h2>  
+                <div class="chart" style="width:350px; height: 250px; margin: 0 auto;">           
+                </div> 
+                <div class="panel-footer"></div>
+            </div>
+        </div> 
+    </section>  
+
+    <script src="../js/jquery-3.5.1.js"></script>
+    <script>$("#page1").load("../html/head.html");</script>
+    <script src="../js/index.js"></script> 
+
+</body>
+
+</html>

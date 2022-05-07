@@ -1,0 +1,145 @@
+body{
+    margin: 0 17%;
+}
+
+.biaoti{
+    padding: 0 0 0 1rem;
+    float:left; 
+    font-size: 22px; 
+    font-family:'STHeiti';
+    border-style:solid;
+    border-left: 1px solid lightgrey;
+    line-height: 3.5rem;
+    color: darkgreen;
+}
+
+.img{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+header img{
+    float: left;
+    width: 20%;
+}
+
+/* #container{
+    width: 100%;
+    height: 37rem;
+    margin: 5px auto 0;
+    overflow: hidden;
+} */
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav{
+    list-style:none;
+    
+}
+  
+.ul{
+    width: 100%;
+    height: 45px;
+    background-color: #550;
+    overflow: hidden;
+    margin: 0 auto; 
+} 
+
+.li{
+    float: left;
+    width: 20%;
+}
+     
+.a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 15px 0;   
+    text-align: center;
+    display: block;    
+    width: 100%;
+}
+
+.nav li a:hover{
+    background-color: rgb(62, 153, 25); 
+    color: white; 
+}
+
+
+#allmap {
+    width: 100%;
+    height: 600px;
+    margin: 5px auto 0;
+    overflow: hidden;
+}
+
+#text1,#text2,#text3,#text4,#text5{
+    display: block;
+    position: relative;
+    height: 100%;
+    display: none;
+    padding: 18px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: grey;
+}
+
+.box1,.box2,.box3,.box4,.box5{
+    display: block;
+    position: relative;
+    background-color: rgba(0, 255, 0, 0.1);
+    border: 1px solid #cccccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.main{
+    padding: 5px 0;
+    display: flex;
+}
+
+.left{
+    flex: 1;
+    float: left;
+    width: auto;
+}
+
+.right{
+    flex: 1;
+    float: left;
+    width: auto;
+}
+
+#u ul li ul{
+    position: absolute;
+    top: 14%;
+    width: 150px;
+    line-height: 5px;
+    display: none;
+    z-index: 9999;
+}
+
+#u ul li ul li a{
+    background: rgb(85,85,0);
+    border-top: 1px solid #ccc;
+}
+
+#u ul li:hover ul{
+    display: block;
+}
+
+.u1{
+    left: 58.5%;
+}
+
+.u2{
+    left: 71.5%;
+}
